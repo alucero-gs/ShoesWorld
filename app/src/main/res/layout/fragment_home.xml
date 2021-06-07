@@ -16,7 +16,7 @@
         android:textAlignment="center"
         android:textSize="20sp"
         android:textColor="@color/purple_200"
-        android:text="Holaaaaaa"
+        android:text="Shoes World"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
