@@ -12,14 +12,14 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.example.shoesworld.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        android:id="@+id/nav_agregar"
+        android:name="com.example.shoesworld.ui.agregar.GalleryFragment"
+        android:label="@string/menu_agregar"
+        tools:layout="@layout/fragment_agregar" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.example.shoesworld.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        android:id="@+id/nav_editar"
+        android:name="com.example.shoesworld.ui.editar.SlideshowFragment"
+        android:label="@string/menu_editar"
+        tools:layout="@layout/fragment_editar" />
 </navigation>
