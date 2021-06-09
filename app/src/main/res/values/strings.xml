@@ -8,8 +8,24 @@
     <string name="action_settings">Settings</string>
 
     <string name="menu_home">Home</string>
-    <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_agregar">Agregar</string>
+    <string name="menu_productos">Productos en stock</string>
+    <string name="menu_busqueda">Buscar</string>
+    <string name="menu_creditos">Créditos</string>
+    <string name="menu_inactivos">Productos agotados</string>
+    <string name="menu_bienvenido">Bienvenid@</string>
     <string name="prueba2">eve 2</string>
     <string name="pruebados">eve2 2</string>
+
+
+    //Creditos
+    <string name="nombre_app">Shoes World</string>
+    <string name="nombre_uni">Instituto Tecnológico de Toluca</string>
+    <string name="nombre_lu">García Saavedra América Lucero</string>
+    <string name="nombre_eve">Sanjurjo García Evelyn</string>
+    <string name="nombre_naye">Zamora Hernández Cinthya Nayeli</string>
+    <string name="nombre_materia">Desarrollo Móvil</string>
+    <string name="nombre_profa">Pulido Alba Rocio Elizabeth</string>
+
+
 </resources>
