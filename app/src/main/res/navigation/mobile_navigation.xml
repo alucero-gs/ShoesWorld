@@ -12,14 +12,32 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.example.shoesworld.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        android:id="@+id/nav_agregar"
+        android:name="com.example.shoesworld.ui.agregar.AgregarFragment"
+        android:label="@string/menu_agregar"
+        tools:layout="@layout/fragment_agregar" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.example.shoesworld.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        android:id="@+id/nav_productos"
+        android:name="com.example.shoesworld.ui.productos.ProductosFragment"
+        android:label="@string/menu_productos"
+        tools:layout="@layout/fragment_productos" />
+
+    <fragment
+        android:id="@+id/nav_inactivos"
+        android:name="com.example.shoesworld.ui.inactivos.InactivosFragment"
+        android:label="@string/menu_inactivos"
+        tools:layout="@layout/fragment_inactivos" />
+
+    <fragment
+        android:id="@+id/nav_buscar"
+        android:name="com.example.shoesworld.ui.busqueda.BuscarFragment"
+        android:label="@string/menu_busqueda"
+        tools:layout="@layout/fragment_buscar" />
+
+    <fragment
+        android:id="@+id/nav_creditos"
+        android:name="com.example.shoesworld.ui.creditos.CreditosFragment"
+        android:label="@string/menu_creditos"
+        tools:layout="@layout/fragment_creditos"/>
 </navigation>
