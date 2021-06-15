@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "911858654293",
+    "project_id": "shoesworld-a8ad1",
+    "storage_bucket": "shoesworld-a8ad1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:911858654293:android:3e5dd67133e3f6bc3808dc",
+        "android_client_info": {
+          "package_name": "com.example.shoesworld"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "911858654293-5nphgg2489s5vph82p5bt2bfd2e708a9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB1RZs6XEz2WD9VIU3t2bC0G8j_y3bt4bk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "911858654293-5nphgg2489s5vph82p5bt2bfd2e708a9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
