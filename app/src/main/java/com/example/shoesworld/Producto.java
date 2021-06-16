@@ -9,6 +9,8 @@ public class Producto {
     private String Precio;
     private String Cantidad;
     private String Stock;
+    private String Categoria;
+    private String Status;
 
     public String getUid() {
         return Uid;
@@ -72,5 +74,21 @@ public class Producto {
 
     public void setStock(String stock) {
         Stock = stock;
+    }
+
+    public String getCategoria() {
+        return Categoria;
+    }
+
+    public void setCategoria(String categoria) {
+        Categoria = categoria;
+    }
+
+    public String getStatus() {
+        return Status;
+    }
+
+    public void setStatus(String status) {
+        Status = status;
     }
 }

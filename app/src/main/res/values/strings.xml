@@ -39,5 +39,59 @@
     <string name="nombre_materia">Desarrollo Móvil</string>
     <string name="nombre_profa">Pulido Alba Rocio Elizabeth</string>
 
+    //Arrays
+    <string-array name="status">
+        <item>Seleccionar status</item>
+        <item>ACTIVO</item>
+        <item>INACTIVO</item>
+    </string-array>
+
+    <string-array name="marcas">
+        <item>Seleccionar marca</item>
+        <item>NIKE</item>
+        <item>JORDAN</item>
+        <item>ANDREA</item>
+        <item>CONVERSE</item>
+        <item>FLEXI</item>
+    </string-array>
+
+    <string-array name="categorias">
+        <item>Seleccionar categoria</item>
+        <item>DEPORTIVO</item>
+        <item>CASUAL</item>
+        <item>ELEGANTE</item>
+    </string-array>
+
+    <string-array name="colores">
+        <item>Seleccionar color</item>
+        <item>NEGRO</item>
+        <item>BLANCO</item>
+        <item>CAFE</item>
+        <item>AZUL</item>
+        <item>ROJO</item>
+        <item>ROSA</item>
+    </string-array>
+
+    <string-array name="tallas">
+        <item>Seleccionar talla</item>
+        <item>20</item>
+        <item>20.5</item>
+        <item>21</item>
+        <item>21.5</item>
+        <item>22</item>
+        <item>22.5</item>
+        <item>23</item>
+        <item>23.5</item>
+        <item>24</item>
+        <item>24.5</item>
+        <item>25</item>
+        <item>25.5</item>
+        <item>26</item>
+        <item>26.5</item>
+        <item>27</item>
+        <item>27.5</item>
+        <item>28</item>
+    </string-array>
+
 
 </resources>

@@ -54,21 +54,11 @@
                     android:inputType="number"/>
             </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/fa_marca"
                 android:layout_margin="10dp"
-                android:hint="@string/marcaproducto"
-                android:textColorHint="@color/secondaryLightColor">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/fa_marca"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/seleccion"
-                    android:textStyle="bold"
-                    android:textSize="15sp"/>
-            </com.google.android.material.textfield.TextInputLayout>
+                android:layout_width="match_parent"
+                android:layout_height="30dp"/>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
@@ -86,44 +76,29 @@
                     android:textSize="15sp"/>
             </com.google.android.material.textfield.TextInputLayout>
 
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/fa_categoria"
+                android:layout_margin="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"/>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:gravity="center">
 
-                <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="155dp"
-                    android:layout_height="wrap_content"
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/fa_talla"
                     android:layout_margin="10dp"
-                    android:hint="@string/tallaproducto"
-                    android:textColorHint="@color/secondaryLightColor">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/fa_talla"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/seleccion"
-                        android:textStyle="bold"
-                        android:textSize="15sp"/>
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="155dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="30dp"/>
+
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/fa_color"
                     android:layout_margin="10dp"
-                    android:hint="@string/colorproducto"
-                    android:textColorHint="@color/secondaryLightColor">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/fa_color"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/seleccion"
-                        android:textStyle="bold"
-                        android:textSize="15sp"/>
-                </com.google.android.material.textfield.TextInputLayout>
-
+                    android:layout_width="155dp"
+                    android:layout_height="30dp"/>
 
             </LinearLayout>
 
@@ -183,6 +158,12 @@
 
 
             </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/fa_status"
+                android:layout_margin="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"/>
 
 
             <LinearLayout
