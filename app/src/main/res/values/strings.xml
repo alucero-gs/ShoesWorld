@@ -17,6 +17,18 @@
     <string name="prueba2">eve 2</string>
     <string name="pruebados">eve2 2</string>
 
+    //Producto
+    <string name="imagenproducto">Imagen del producto</string>
+    <string name="idproducto">Id del producto</string>
+    <string name="marcaproducto">Marca del producto</string>
+    <string name="modeloproducto">Modelo del producto</string>
+    <string name="tallaproducto">Talla</string>
+    <string name="colorproducto">Color</string>
+    <string name="precioproducto">Precio del producto</string>
+    <string name="cantidadproducto">Existencia</string>
+    <string name="stockproducto">Stock</string>
+
+
 
     //Creditos
     <string name="nombre_app">Shoes World</string>

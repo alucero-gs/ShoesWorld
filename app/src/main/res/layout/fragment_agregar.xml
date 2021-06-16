@@ -6,17 +6,224 @@
     android:layout_height="match_parent"
     tools:context=".ui.agregar.AgregarFragment">
 
-    <TextView
-        android:id="@+id/text_gallery"
+
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/fa_textTitulo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/menu_agregar"
+                android:layout_marginTop="20dp"
+                android:textSize="30dp"
+                android:textColor="@color/purple_200"
+                android:textStyle="bold"
+                android:gravity="center" />
+            <ImageView
+                android:id="@+id/fa_image"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/ic_menu_camera"
+                android:layout_marginBottom="20dp"
+                android:contentDescription="@string/imagenproducto"
+                />
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:hint="@string/idproducto"
+                android:textColorHint="@color/secondaryLightColor">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/fa_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/seleccion"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:inputType="number"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:hint="@string/marcaproducto"
+                android:textColorHint="@color/secondaryLightColor">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/fa_marca"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/seleccion"
+                    android:textStyle="bold"
+                    android:textSize="15sp"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:hint="@string/modeloproducto"
+                android:textColorHint="@color/secondaryLightColor">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/fa_modelo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/seleccion"
+                    android:textStyle="bold"
+                    android:textSize="15sp"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="155dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:hint="@string/tallaproducto"
+                    android:textColorHint="@color/secondaryLightColor">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/fa_talla"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/seleccion"
+                        android:textStyle="bold"
+                        android:textSize="15sp"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="155dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:hint="@string/colorproducto"
+                    android:textColorHint="@color/secondaryLightColor">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/fa_color"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/seleccion"
+                        android:textStyle="bold"
+                        android:textSize="15sp"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+            </LinearLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:hint="@string/precioproducto"
+                android:textColorHint="@color/secondaryLightColor">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/fa_precio"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/seleccion"
+                    android:textStyle="bold"
+                    android:textSize="15sp"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="155dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:hint="@string/cantidadproducto"
+                    android:textColorHint="@color/secondaryLightColor">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/fa_cantidad"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/seleccion"
+                        android:textStyle="bold"
+                        android:textSize="15sp"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="155dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:hint="@string/stockproducto"
+                    android:textColorHint="@color/secondaryLightColor">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/fa_stock"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/seleccion"
+                        android:textStyle="bold"
+                        android:textSize="15sp"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/fa_btnClear"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:backgroundTint="#FF008C"
+                    android:elevation="15dp"
+                    android:text="Limpiar" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/fa_btnAdd"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:elevation="15dp"
+                    android:text="Agregar"
+                    android:backgroundTint="#00FF88"/>
+
+
+            </LinearLayout>
+
+
+            </LinearLayout>
+
+
+
+
+
+    </ScrollView>
+
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
