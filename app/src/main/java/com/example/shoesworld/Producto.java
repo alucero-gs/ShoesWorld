@@ -91,4 +91,9 @@ public class Producto {
     public void setStatus(String status) {
         Status = status;
     }
+
+    public String toString(){
+        return ("ID " + " " + "Marca" + " " + "Modelo" + " " + "Talla\n" +
+                Uid + " " + Marca + " " + Modelo + " " + Talla);
+    }
 }

@@ -27,6 +27,9 @@
     <string name="precioproducto">Precio del producto</string>
     <string name="cantidadproducto">Existencia</string>
     <string name="stockproducto">Stock</string>
+    <string name="categoriaproducto">Categoria</string>
+    <string name="statusproducto">Status</string>
+
 
 
 
@@ -38,6 +41,7 @@
     <string name="nombre_naye">Zamora Hernández Cinthya Nayeli</string>
     <string name="nombre_materia">Desarrollo Móvil</string>
     <string name="nombre_profa">Pulido Alba Rocio Elizabeth</string>
+    <string name="version">Version 1.0</string>
 
     //Arrays
     <string-array name="status">

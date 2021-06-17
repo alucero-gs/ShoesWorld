@@ -33,7 +33,7 @@ public class AgregarFragment extends Fragment implements View.OnClickListener, A
 
 
     private Button btnLimpia, btnGuarda;
-    private EditText etId, etMarca, etModelo, etTalla, etColor, etPrecio, etCantidad, etStock;
+    private EditText etId, etModelo, etPrecio, etCantidad, etStock;
     private Spinner spnCategoria, spnTalla, spnColor, spnMarca, spnStatus;
 
     public static String Sstatus, Scategoria, Stalla, Scolor, Smarca;

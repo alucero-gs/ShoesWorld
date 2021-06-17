@@ -5,9 +5,271 @@
     android:layout_height="match_parent"
     tools:context=".ui.busqueda.BuscarFragment">
 
-    <TextView
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Hello" />
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/fb_textTitulo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Editar"
+                android:layout_marginTop="20dp"
+                android:textSize="30dp"
+                android:textColor="@color/purple_200"
+                android:textStyle="bold"
+                android:gravity="center" />
+            <ImageView
+                android:id="@+id/fb_image"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/ic_menu_camera"
+                android:layout_marginBottom="20dp"
+                android:contentDescription="@string/imagenproducto"
+                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:hint="@string/idproducto"
+                    android:textColorHint="@color/secondaryLightColor">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/fb_id"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/seleccion"
+                        android:textStyle="bold"
+                        android:textSize="15sp"
+                        android:inputType="number"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/fb_btnBuscar"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:elevation="15dp"
+                    android:text="EDITAR"
+                    android:backgroundTint="@color/secondaryColor"/>
+
+            </LinearLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:hint="@string/marcaproducto"
+                android:textColorHint="@color/secondaryLightColor">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/fb_marca"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/seleccion"
+                    android:textStyle="bold"
+                    android:textSize="15sp"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:hint="@string/modeloproducto"
+                android:textColorHint="@color/secondaryLightColor">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/fb_modelo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/seleccion"
+                    android:textStyle="bold"
+                    android:textSize="15sp"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:hint="@string/categoriaproducto"
+                android:textColorHint="@color/secondaryLightColor">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/fb_categoria"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/seleccion"
+                    android:textStyle="bold"
+                    android:textSize="15sp"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="155dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:hint="@string/tallaproducto"
+                    android:textColorHint="@color/secondaryLightColor">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/fb_talla"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/seleccion"
+                        android:textStyle="bold"
+                        android:textSize="15sp"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="155dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:hint="@string/colorproducto"
+                    android:textColorHint="@color/secondaryLightColor">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/fb_color"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/seleccion"
+                        android:textStyle="bold"
+                        android:textSize="15sp"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:hint="@string/precioproducto"
+                android:textColorHint="@color/secondaryLightColor">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/fb_precio"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/seleccion"
+                    android:textStyle="bold"
+                    android:textSize="15sp"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="155dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:hint="@string/cantidadproducto"
+                    android:textColorHint="@color/secondaryLightColor">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/fb_cantidad"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/seleccion"
+                        android:textStyle="bold"
+                        android:textSize="15sp"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="155dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:hint="@string/stockproducto"
+                    android:textColorHint="@color/secondaryLightColor">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/fb_stock"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/seleccion"
+                        android:textStyle="bold"
+                        android:textSize="15sp"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+            </LinearLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:hint="@string/statusproducto"
+                android:textColorHint="@color/secondaryLightColor">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/fb_status"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/seleccion"
+                    android:textStyle="bold"
+                    android:textSize="15sp"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/fb_btnClear"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:backgroundTint="#FF008C"
+                    android:elevation="15dp"
+                    android:text="Limpiar campos" />
+            </LinearLayout>
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ListView
+                        android:id="@+id/lvElementos"
+                        android:layout_width="match_parent"
+                        android:layout_height="1000px"
+                        android:layout_margin="20dp"
+                        android:layout_marginBottom="5dp"
+                        android:smoothScrollbar="true"
+                        />
+                </LinearLayout>
+            </ScrollView>
+
+        </LinearLayout>
+
+
+    </ScrollView>
 
 </FrameLayout>
