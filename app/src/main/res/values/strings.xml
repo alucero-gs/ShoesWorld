@@ -11,7 +11,7 @@
     <string name="menu_agregar">Agregar</string>
     <string name="menu_productos">Productos en stock</string>
     <string name="menu_busqueda">Buscar</string>
-    <string name="menu_creditos">Créditos</string>
+    <string name="menu_creditos">Informacion</string>
     <string name="menu_inactivos">Productos agotados</string>
     <string name="menu_bienvenido">Bienvenid@</string>
     <string name="prueba2">eve 2</string>
@@ -29,8 +29,6 @@
     <string name="stockproducto">Stock</string>
     <string name="categoriaproducto">Categoria</string>
     <string name="statusproducto">Status</string>
-
-
 
 
     //Creditos
@@ -96,6 +94,7 @@
         <item>27.5</item>
         <item>28</item>
     </string-array>
+    <string name="title_activity_maps">Map</string>
 
 
 </resources>
