@@ -40,6 +40,9 @@ import org.jetbrains.annotations.NotNull;
 public class HomeFragment extends Fragment {
      String name, correo;
     CardView cerrar;
+    SharedPreferences prefs;
+    int tipo;
+
 
 
 
@@ -60,15 +63,16 @@ public class HomeFragment extends Fragment {
         super.onCreate(savedInstanceState);
 
 
-        SharedPreferences prefs;
-        prefs =getActivity(). getSharedPreferences("shared_login_data",   Context.MODE_PRIVATE);
 
 
+        this.prefs =getActivity(). getSharedPreferences("user_details",   Context.MODE_PRIVATE);
 
-        this.correo= prefs.getString("correo", "");
+
+        correo= prefs.getString("correo", "");
+        tipo=prefs.getInt("tipo",0);
 
         name=prefs.getString("nombre","");
-        System.out.println("recibe "+correo+" nombre: "+name);
+        System.out.println("recibe "+correo+" nombre: "+name+ "tipo "+ tipo);
 
 
     }
@@ -98,6 +102,10 @@ public class HomeFragment extends Fragment {
                 name="";
                 correo="";
                 textView.setText("");
+                SharedPreferences.Editor editor = prefs.edit();
+                editor.clear();
+                //editor.remove("keyname");
+                editor.commit();
 
 
                 startActivity(intent);

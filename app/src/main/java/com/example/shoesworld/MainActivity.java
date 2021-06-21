@@ -39,8 +39,8 @@ public class MainActivity extends AppCompatActivity {
     Button btn_iniciar, btn_regis;
     EditText etxt_correo, etxt_passs;
     String correo, pass, name;
-
-    SharedPreferences prefs;
+    int tipo;
+    SharedPreferences pref;
     SharedPreferences.Editor editor;
 
 
@@ -51,9 +51,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
-        prefs= getSharedPreferences("shared_login_data", Context.MODE_PRIVATE);
-        editor = prefs.edit();
 
+
+        pref = getSharedPreferences("user_details",MODE_PRIVATE);
+        editor = pref.edit();
 
 
 
@@ -106,8 +107,9 @@ public class MainActivity extends AppCompatActivity {
                                             Usuarios usuario = snapshot.getValue(Usuarios.class);
                                             correo=usuario.getCorreo().toString();
                                             name=usuario.getNombre().toString();
+                                            tipo= ((Integer) usuario.getTipo());
                                             System.out.println("res: "+name);
-                                            enviar(name, correo);
+                                            enviar(name, correo, tipo);
                                             Intent intent = new Intent(MainActivity.this, Principal.class);
 
                                             startActivity(intent);
@@ -139,15 +141,6 @@ public class MainActivity extends AppCompatActivity {
 
                                     }
                                 }) ;
-
-
-
-
-
-
-
-
-
 
 
 
@@ -193,11 +186,14 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private void enviar(String name, String correo) {
+    private void enviar(String name, String correo, int tipo) {
 
-        this.editor.putString("correo", correo);
-        this.editor.putString("nombre", name);
-        System.out.println("res: "+name+" "+correo);
+        editor.putString("correo", correo);
+        editor.putString("nombre", name);
+        editor.putInt("tipo", tipo);
+        editor.commit();
+
+        System.out.println("res: "+correo+" "+correo);
 
     }
 }
