@@ -27,5 +27,14 @@
     <string name="nombre_materia">Desarrollo Móvil</string>
     <string name="nombre_profa">Pulido Alba Rocio Elizabeth</string>
 
+    //login
+    <string name="saludo">Bienvenido</string>
+    <string name="correo">Ingresa tu correo electrónico</string>
+    <string name="pass">Ingresa tu contraseña</string>
+    <string name="ingresar">Iniciar sesión</string>
+    <string name="registro">¿No tienes cuenta? regístrate aquí</string>
+    <string name="btnregis">Registro</string>
+    <string name="nombre">Ingresa tu nombre</string>
+
 
 </resources>
