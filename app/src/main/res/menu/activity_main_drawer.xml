@@ -22,6 +22,12 @@
                 android:id="@+id/nav_buscar"
                 android:icon="@android:drawable/ic_menu_edit"
                 android:title="Editar" />
+
+            <item
+                android:id="@+id/nav_eliminar"
+                android:icon="@android:drawable/ic_menu_delete"
+                android:title="Eliminar" />
+
             <item
                 android:id="@+id/nav_inactivos"
                 android:icon="@android:drawable/presence_busy"

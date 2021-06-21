@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.busqueda.BuscarFragment">
+    tools:context=".ui.eliminar.EliminarFragment">
 
 
     <ScrollView
@@ -16,17 +16,17 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/fb_textTitulo"
+                android:id="@+id/fe_textTitulo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Editar"
+                android:text="Eliminar Producto"
                 android:layout_marginTop="20dp"
                 android:textSize="30dp"
                 android:textColor="@color/purple_200"
                 android:textStyle="bold"
                 android:gravity="center" />
             <ImageView
-                android:id="@+id/fb_image"
+                android:id="@+id/fe_image"
                 android:layout_width="200dp"
                 android:layout_height="200dp"
                 android:layout_gravity="center"
@@ -49,7 +49,7 @@
                     android:textColorHint="@color/secondaryLightColor">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/fb_id"
+                        android:id="@+id/fe_id"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="@color/seleccion"
@@ -59,13 +59,13 @@
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.button.MaterialButton
-                    android:id="@+id/fb_btnBuscar"
+                    android:id="@+id/fe_btnEliminar"
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_weight="1"
                     android:elevation="15dp"
-                    android:text="EDITAR"
+                    android:text="ELIMINA"
                     android:backgroundTint="@color/secondaryColor"/>
 
             </LinearLayout>
@@ -78,7 +78,7 @@
                 android:textColorHint="@color/secondaryLightColor">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/fb_marca"
+                    android:id="@+id/fe_marca"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="@color/seleccion"
@@ -94,7 +94,7 @@
                 android:textColorHint="@color/secondaryLightColor">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/fb_modelo"
+                    android:id="@+id/fe_modelo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="@color/seleccion"
@@ -110,7 +110,7 @@
                 android:textColorHint="@color/secondaryLightColor">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/fb_categoria"
+                    android:id="@+id/fe_categoria"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="@color/seleccion"
@@ -132,7 +132,7 @@
                     android:textColorHint="@color/secondaryLightColor">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/fb_talla"
+                        android:id="@+id/fe_talla"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="@color/seleccion"
@@ -148,7 +148,7 @@
                     android:textColorHint="@color/secondaryLightColor">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/fb_color"
+                        android:id="@+id/fe_color"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="@color/seleccion"
@@ -166,7 +166,7 @@
                 android:textColorHint="@color/secondaryLightColor">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/fb_precio"
+                    android:id="@+id/fe_precio"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="@color/seleccion"
@@ -188,7 +188,7 @@
                     android:textColorHint="@color/secondaryLightColor">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/fb_cantidad"
+                        android:id="@+id/fe_cantidad"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="@color/seleccion"
@@ -204,7 +204,7 @@
                     android:textColorHint="@color/secondaryLightColor">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/fb_stock"
+                        android:id="@+id/fe_stock"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="@color/seleccion"
@@ -223,7 +223,7 @@
                 android:textColorHint="@color/secondaryLightColor">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/fb_status"
+                    android:id="@+id/fe_status"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="@color/seleccion"
@@ -238,7 +238,7 @@
                 android:gravity="center">
 
                 <com.google.android.material.button.MaterialButton
-                    android:id="@+id/fb_btnClear"
+                    android:id="@+id/fe_btnClear"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
