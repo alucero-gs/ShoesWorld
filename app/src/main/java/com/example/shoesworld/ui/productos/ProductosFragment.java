@@ -88,7 +88,7 @@ public class ProductosFragment extends Fragment {
 
     private void limpiar() {
 
-        Toast.makeText(getContext(), "limpia", Toast.LENGTH_LONG).show();
+        //Toast.makeText(getContext(), "limpia", Toast.LENGTH_LONG).show();
 
             lista_productos.clear();
             adaptador_producto= new Adaptador_producto(getContext(), lista_productos);
@@ -98,8 +98,8 @@ public class ProductosFragment extends Fragment {
 
     private void cargar(){
 
-        Toast.makeText(getContext(), "carga", Toast.LENGTH_LONG).show();
-        Query consulta= databaseReference.child("zapatos").orderByChild("stock").startAt(5);
+        //Toast.makeText(getContext(), "carga", Toast.LENGTH_LONG).show();
+        Query consulta= databaseReference.child("Producto").orderByKey();
         consulta.addValueEventListener(new ValueEventListener() {
 
             @Override
@@ -109,9 +109,9 @@ public class ProductosFragment extends Fragment {
 
 
                     for(DataSnapshot ds: snapshot.getChildren()){
-                        String nombre=ds.child("nombre").getValue().toString();
-                        //String id=ds.child("zapatos").getKey().toString();
-                        String id="a1";
+                        String nombre=ds.child("modelo").getValue().toString();
+                        String id=ds.child("uid").getValue().toString();
+                        //String id="a1";
                         lista_productos.add(new Productos(nombre,id, R.drawable.ic_menu_camera));
 
                     }
