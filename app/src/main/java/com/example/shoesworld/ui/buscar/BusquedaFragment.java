@@ -7,6 +7,8 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,20 +16,41 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.shoesworld.Adaptador_producto;
 import com.example.shoesworld.Producto;
+import com.example.shoesworld.Productos;
 import com.example.shoesworld.R;
+import com.example.shoesworld.ui.productos.ProductosViewModel;
 import com.google.firebase.FirebaseApp;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
+
+import org.jetbrains.annotations.NotNull;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class BusquedaFragment extends Fragment implements View.OnClickListener, AdapterView.OnItemSelectedListener {
 
     private BusquedaViewModel mViewModel;
     private Button btnLimpia, btnBusqueda;
     private Spinner spnCategoria, spnTalla, spnColor, spnMarca;
+
+    Adaptador_producto adaptador_producto;
+    RecyclerView rv;
+    ArrayList<Productos> lista_productos;
+    RecyclerView.LayoutManager layoutManager;
+
 
     public static String Scategoria, Stalla, Scolor, Smarca;
 
@@ -42,8 +65,19 @@ public class BusquedaFragment extends Fragment implements View.OnClickListener, 
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_busqueda, container, false);
+
+        TextView identificador,nombre;
+        ImageButton info, editar, borrar;
+
+        identificador = root.findViewById(R.id.tv_id_item);
+        nombre = root.findViewById(R.id.tv_nombre_item);
+        info = root.findViewById(R.id.ib_info_item);
+        editar = root.findViewById(R.id.ib_editar_item);
+        borrar = root.findViewById(R.id.ib_borrar_item);
+        rv =root.findViewById(R.id.rv_marca);
+        lista_productos=new ArrayList<>();
+
         iniciarFirebase();
-        //listarDatos();
         Componentes(root);
         return root;
     }
@@ -92,6 +126,7 @@ public class BusquedaFragment extends Fragment implements View.OnClickListener, 
         spnColor = root.findViewById(R.id.fbu_color);
         spnColor.setAdapter(colorAdapter);
         spnColor.setOnItemSelectedListener((AdapterView.OnItemSelectedListener) this);
+
     }
 
     private void Botones(View root){
@@ -105,7 +140,6 @@ public class BusquedaFragment extends Fragment implements View.OnClickListener, 
     }
 
     private void clearFields(){
-        ArrayAdapter<CharSequence> estatusAdapter;
         ArrayAdapter<CharSequence> marcaAdapter;
         marcaAdapter = ArrayAdapter.createFromResource(getContext(), R.array.marcas, android.R.layout.simple_spinner_item);
         Smarca = "";
@@ -128,27 +162,6 @@ public class BusquedaFragment extends Fragment implements View.OnClickListener, 
 
 
     }
-
-    public void validacion(){
-                String marca = spnMarca.getSelectedItem().toString();
-        String color = spnColor.getSelectedItem().toString();
-        String talla = spnTalla.getSelectedItem().toString();
-        String categoria = spnCategoria.getSelectedItem().toString();
-
-        if (marca.equals("Seleccionar marca")){
-            Toast.makeText(getContext(), "Para seguir debe seleccionar una marca", Toast.LENGTH_SHORT).show();
-        }
-        else if(color.equals("Seleccionar color")){
-            Toast.makeText(getContext(), "Para seguir debe seleccionar un color", Toast.LENGTH_SHORT).show();
-        }
-        else if(talla.equals("Seleccionar talla")){
-            Toast.makeText(getContext(), "Para seguir debe seleccionar una talla", Toast.LENGTH_SHORT).show();
-        }
-        else if(categoria.equals("Seleccionar categoria")){
-            Toast.makeText(getContext(), "Para seguir debe seleccionar una categoria", Toast.LENGTH_SHORT).show();
-        }
-    }
-
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -192,19 +205,135 @@ public class BusquedaFragment extends Fragment implements View.OnClickListener, 
     }
 
 
-    @Override
-    public void onClick(View v) {
+    private void cargar(){
         String marca = spnMarca.getSelectedItem().toString();
         String talla = spnTalla.getSelectedItem().toString();
         String color = spnColor.getSelectedItem().toString();
         String categoria = spnCategoria.getSelectedItem().toString();
 
+
+        Query buscarm = databaseReference.child("Producto").orderByChild("marca").equalTo(marca);
+        Query buscarcat = databaseReference.child("Producto").orderByChild("categoria").equalTo(categoria);
+        Query buscart = databaseReference.child("Producto").orderByChild("talla").equalTo(talla);
+        Query buscarcol = databaseReference.child("Producto").orderByChild("color").equalTo(color);
+
+        buscarm.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull @NotNull DataSnapshot snapshot) {
+                limpiar();
+                if(snapshot.exists()){
+                    for(DataSnapshot ds: snapshot.getChildren()){
+                        String nombre=ds.child("modelo").getValue().toString();
+                        String id=ds.child("uid").getValue().toString();
+                        //String id="a1";
+                        lista_productos.add(new Productos(nombre,id, R.drawable.ic_menu_camera));
+                    }
+                    adaptador_producto= new Adaptador_producto(getContext(),lista_productos);
+                    rv.setLayoutManager(new LinearLayoutManager(getContext()));
+                    rv.setAdapter(adaptador_producto);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull @NotNull DatabaseError error) {
+
+            }
+        });
+
+        buscarcat.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull @NotNull DataSnapshot snapshot) {
+                limpiar();
+                if(snapshot.exists()){
+                    for(DataSnapshot ds: snapshot.getChildren()){
+                        String nombre=ds.child("modelo").getValue().toString();
+                        String id=ds.child("uid").getValue().toString();
+                        //String id="a1";
+                        lista_productos.add(new Productos(nombre,id, R.drawable.ic_menu_camera));
+                    }
+                    adaptador_producto= new Adaptador_producto(getContext(),lista_productos);
+                    rv.setLayoutManager(new LinearLayoutManager(getContext()));
+                    rv.setAdapter(adaptador_producto);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull @NotNull DatabaseError error) {
+
+            }
+        });
+
+        buscart.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull @NotNull DataSnapshot snapshot) {
+                limpiar();
+                if(snapshot.exists()){
+                    for(DataSnapshot ds: snapshot.getChildren()){
+                        String nombre=ds.child("modelo").getValue().toString();
+                        String id=ds.child("uid").getValue().toString();
+                        //String id="a1";
+                        lista_productos.add(new Productos(nombre,id, R.drawable.ic_menu_camera));
+                    }
+                    adaptador_producto= new Adaptador_producto(getContext(),lista_productos);
+                    rv.setLayoutManager(new LinearLayoutManager(getContext()));
+                    rv.setAdapter(adaptador_producto);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull @NotNull DatabaseError error) {
+
+            }
+        });
+
+        buscarcol.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull @NotNull DataSnapshot snapshot) {
+                limpiar();
+                if(snapshot.exists()){
+                    for(DataSnapshot ds: snapshot.getChildren()){
+                        String nombre=ds.child("modelo").getValue().toString();
+                        String id=ds.child("uid").getValue().toString();
+                        //String id="a1";
+                        lista_productos.add(new Productos(nombre,id, R.drawable.ic_menu_camera));
+                    }
+                    adaptador_producto= new Adaptador_producto(getContext(),lista_productos);
+                    rv.setLayoutManager(new LinearLayoutManager(getContext()));
+                    rv.setAdapter(adaptador_producto);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull @NotNull DatabaseError error) {
+
+            }
+        });
+
+
+
+    }
+
+    private void limpiar() {
+
+        //Toast.makeText(getContext(), "limpia", Toast.LENGTH_LONG).show();
+
+        lista_productos.clear();
+        adaptador_producto= new Adaptador_producto(getContext(), lista_productos);
+        rv.setLayoutManager(new LinearLayoutManager(getContext()));
+        rv.setAdapter(adaptador_producto);
+
+    }
+
+
+    @Override
+    public void onClick(View v) {
         switch (v.getId()){
             case R.id.fbu_btnClear:
                 clearFields();
+                limpiar();
                 break;
             case R.id.fbu_btnBusca:
-
+                cargar();
                 break;
 
 

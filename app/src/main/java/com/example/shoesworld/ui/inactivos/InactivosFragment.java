@@ -40,7 +40,6 @@ import java.util.List;
 public class InactivosFragment extends Fragment {
 
     private InactivosViewModel inactivosViewModel;
-
     Adaptador_producto adaptador_producto;
     RecyclerView rv ;
     ArrayList<Productos> lista_productos;
@@ -48,21 +47,12 @@ public class InactivosFragment extends Fragment {
     DatabaseReference databaseReference;
     RecyclerView.LayoutManager layoutManager;
 
-    ListView lproducto;
-
-    private List<Producto> ListaProducto = new ArrayList<Producto>(100);
-    ArrayAdapter<Producto> arrayAdapterProducto;
-
-
-    public static InactivosFragment newInstance() {
-        return new InactivosFragment();
-    }
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-
-        inactivosViewModel = new ViewModelProvider(this).get(InactivosViewModel.class);
+        inactivosViewModel =
+                new ViewModelProvider(this).get(InactivosViewModel.class);
         View root = inflater.inflate(R.layout.fragment_inactivos, container, false);
         TextView identificador,nombre;
         ImageButton info, editar, borrar;
@@ -74,10 +64,8 @@ public class InactivosFragment extends Fragment {
         borrar = root.findViewById(R.id.ib_borrar_item);
         rv =root.findViewById(R.id.rv_stock);
         lista_productos=new ArrayList<>();
-
-        iniciarFB();
+        iniciarFirebase();
         cargar();
-
         inactivosViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s)
@@ -89,7 +77,7 @@ public class InactivosFragment extends Fragment {
         return root;
     }
 
-    private void iniciarFB() {
+    public void iniciarFirebase(){
         FirebaseApp.initializeApp(getContext());
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference = firebaseDatabase.getReference();
@@ -109,6 +97,7 @@ public class InactivosFragment extends Fragment {
 
         //Toast.makeText(getContext(), "carga", Toast.LENGTH_LONG).show();
         Query consulta= databaseReference.child("Producto").orderByKey();
+                //orderByChild("status").equalTo("INACTIVO");
         consulta.addValueEventListener(new ValueEventListener() {
 
             @Override
@@ -118,10 +107,13 @@ public class InactivosFragment extends Fragment {
 
 
                     for(DataSnapshot ds: snapshot.getChildren()){
-                        String nombre=ds.child("modelo").getValue().toString();
-                        String id=ds.child("uid").getValue().toString();
-                        //String id="a1";
-                        lista_productos.add(new Productos(nombre,id, R.drawable.ic_menu_camera));
+                        String status = ds.child("status").getValue().toString();
+                        if(status.equals("INACTIVO")){
+                            String nombre=ds.child("modelo").getValue().toString();
+                            String id=ds.child("uid").getValue().toString();
+                            //String id="a1";
+                            lista_productos.add(new Productos(nombre,id, R.drawable.ic_menu_camera));
+                        }
 
                     }
                     adaptador_producto= new Adaptador_producto(getContext(),lista_productos);
@@ -139,4 +131,5 @@ public class InactivosFragment extends Fragment {
 
 
     }
+
 }

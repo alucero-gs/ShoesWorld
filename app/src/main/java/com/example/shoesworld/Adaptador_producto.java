@@ -63,7 +63,6 @@ public class Adaptador_producto extends RecyclerView.Adapter<Adaptador_producto.
         ImageView foto;
 
         public ViewHolder(@NonNull @NotNull View itemView) {
-
             super(itemView);
             nombre=itemView.findViewById(R.id.tv_nombre_item);
             id=itemView.findViewById(R.id.tv_id_item);
