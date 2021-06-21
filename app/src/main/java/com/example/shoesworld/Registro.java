@@ -76,13 +76,13 @@ EditText et_correo, et_pass, et_nombre;
                                     h.setStatus(1);
                                     databaseReference.child("usuarios").child(key).setValue(h);
                                     Toast.makeText(Registro.this, "Usuario registrado", Toast.LENGTH_LONG).show();
-                                    SharedPreferences prefs = getSharedPreferences("shared_login_data",   Context.MODE_PRIVATE);
-                                    SharedPreferences.Editor editor = prefs.edit();
-                                    editor.putString("correo", correo);
-                                    editor.putString("nombre", nombre);
-                                    editor.commit();
+                                    //SharedPreferences prefs = getSharedPreferences("shared_login_data",   Context.MODE_PRIVATE);
+                                    //SharedPreferences.Editor editor = prefs.edit();
+                                    //editor.putString("correo", correo);
+                                    //editor.putString("nombre", nombre);
+                                   // editor.commit();
 
-                                    Intent intent = new Intent(Registro.this, Principal.class);
+                                    Intent intent = new Intent(Registro.this, MainActivity.class);
                                     startActivity(intent);
                                     finish();
 
