@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
-    <group android:checkableBehavior="single">
+    <group android:checkableBehavior="single" android:id ="@+id/grupo_admin">
         <item
             android:id="@+id/nav_home"
             android:icon="@drawable/ic_menu_camera"
@@ -22,7 +22,7 @@
             android:icon="@android:drawable/ic_menu_search"
             android:title="Buscar producto" />
 
-        <group android:checkableBehavior="single">
+        <group android:checkableBehavior="single" android:id ="@+id/grupo_empleado">
             <item
                 android:id="@+id/nav_buscar"
                 android:icon="@android:drawable/ic_menu_edit"
@@ -44,6 +44,8 @@
             android:id="@+id/nav_creditos"
             android:icon="@android:drawable/sym_action_chat"
             android:title="@string/menu_creditos" />
+
+
 
     </group>
 </menu>

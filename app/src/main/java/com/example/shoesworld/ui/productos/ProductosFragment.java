@@ -109,10 +109,13 @@ public class ProductosFragment extends Fragment {
 
 
                     for(DataSnapshot ds: snapshot.getChildren()){
-                        String nombre=ds.child("modelo").getValue().toString();
-                        String id=ds.child("uid").getValue().toString();
-                        //String id="a1";
-                        lista_productos.add(new Productos(nombre,id, R.drawable.ic_menu_camera));
+                        String status = ds.child("status").getValue().toString();
+                        if(status.equals("ACTIVO")){
+                            String nombre=ds.child("modelo").getValue().toString();
+                            String id=ds.child("uid").getValue().toString();
+                            //String id="a1";
+                            lista_productos.add(new Productos(nombre,id, R.drawable.ic_menu_camera));
+                        }
 
                     }
                        adaptador_producto= new Adaptador_producto(getContext(),lista_productos);
