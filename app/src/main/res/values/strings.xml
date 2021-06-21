@@ -96,5 +96,14 @@
     </string-array>
     <string name="title_activity_maps">Map</string>
 
+    //login
+    <string name="saludo">Bienvenido</string>
+    <string name="correo">Ingresa tu correo electrónico</string>
+    <string name="pass">Ingresa tu contraseña</string>
+    <string name="ingresar">Iniciar sesión</string>
+    <string name="registro">¿No tienes cuenta? regístrate aquí</string>
+    <string name="btnregis">Registro</string>
+    <string name="nombre">Ingresa tu nombre</string>
+
 
 </resources>
