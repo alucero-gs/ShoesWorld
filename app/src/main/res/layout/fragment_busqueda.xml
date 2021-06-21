@@ -1,13 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.buscar.BusquedaFragment">
 
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Hello" />
+        android:layout_height="match_parent">
 
-</FrameLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/fbu_textTitulo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/menu_busqueda"
+                android:layout_marginTop="20dp"
+                android:textSize="30dp"
+                android:textColor="@color/purple_200"
+                android:textStyle="bold"
+                android:gravity="center" />
+            <ImageView
+                android:id="@+id/fbu_image"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/ic_menu_camera"
+                android:layout_marginBottom="20dp"
+                android:contentDescription="@string/imagenproducto"
+                />
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/fbu_marca"
+                android:layout_margin="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"/>
+
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/fbu_categoria"
+                android:layout_margin="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/fbu_talla"
+                    android:layout_margin="10dp"
+                    android:layout_width="155dp"
+                    android:layout_height="30dp"/>
+
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/fbu_color"
+                    android:layout_margin="10dp"
+                    android:layout_width="155dp"
+                    android:layout_height="30dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/fbu_btnClear"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:backgroundTint="#FF008C"
+                    android:elevation="15dp"
+                    android:text="Limpiar" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/fbu_btnBusca"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:elevation="15dp"
+                    android:text="Buscar"
+                    android:backgroundTint="#00FF88"/>
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
