@@ -38,15 +38,10 @@ import com.google.firebase.database.ValueEventListener;
 import org.jetbrains.annotations.NotNull;
 
 public class HomeFragment extends Fragment {
-     String name, correo;
+    String name, correo;
     CardView cerrar;
     SharedPreferences prefs;
     int tipo;
-
-
-
-
-
 
 
 
@@ -61,9 +56,6 @@ public class HomeFragment extends Fragment {
     @Override
     public void onCreate( Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
-
 
         this.prefs =getActivity(). getSharedPreferences("user_details",   Context.MODE_PRIVATE);
 

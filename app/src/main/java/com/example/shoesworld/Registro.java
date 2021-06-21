@@ -72,7 +72,7 @@ EditText et_correo, et_pass, et_nombre;
                                     h.setNombre(nombre);
                                     h.setCorreo(correo);
                                     h.setPass(pass);
-                                    h.setTipo(2);
+                                    h.setTipo(1);
                                     h.setStatus(1);
                                     databaseReference.child("usuarios").child(key).setValue(h);
                                     Toast.makeText(Registro.this, "Usuario registrado", Toast.LENGTH_LONG).show();
